@@ -7,7 +7,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class BaseLLM1():
 
-    __API_KEY = "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"
+    __API_KEY = ""
     __API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
     def _get_headers(self):
