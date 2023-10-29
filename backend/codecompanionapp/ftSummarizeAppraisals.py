@@ -17,7 +17,7 @@ class SummarizeAppraisalsForm(forms.Form, BaseLLM.BaseLLM1):
         message = "Analyse and give a 2 line summary for this appraisal. \n" + input_appraisal + input_file
         return message
     
-    def generate_chat_completion(self, input_file, input_message, max_tokens=100):
+    def generate_chat_completion(self, input_file, input_message, max_tokens=1000):
         if type(input_file) == type(""):
             file_lines = len(input_file)
         else:
