@@ -21,12 +21,15 @@
         <button>
           <a href="/commentGenerator">Comment Generator</a>
         </button>
+       <button>
+          <a href="/unitTestGenerator">Unit Test Generator</a>
+        </button>
         {% elif request.user.is_authenticated and request.user.ROLE == "SOFTWAREDEVELOPMENTMANAGER" %}
         <button>
           <a href="/documentationHelper">Documentation Helper</a>
         </button>
         <button>
-          <a href="/learningPathRecommendations">LearningPathRecommendations</a>
+          <a href="/learningPathRecommendations">Learning Path Recommendations</a>
         </button>
         <button>
           <a href="/letterGenerator">Letter Generator</a>
@@ -41,9 +44,7 @@
         <button>
           <a href="/technicalTrends">Technical Trends Generator</a>
         </button>
-        <button>
-          <a href="/unitTestGenerator">Unit Test Generator</a>
-        </button>
+       
         
         {% else %}
   
