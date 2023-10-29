@@ -1,0 +1,22 @@
+{% extends "codecompanionapp/header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Documentation Helper--> 
+<div class="container py-5">
+	<h1>Documentation Helper</h1>
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            {{documentationHelper_form.input_file|as_crispy_field}}
+        </div>
+        <div>
+            {{documentationHelper_form.input_code|as_crispy_field}}
+        </div>
+            <button type="submit"> Generate Documentation </button>
+        </form>
+</div>
+
+{% endblock %}

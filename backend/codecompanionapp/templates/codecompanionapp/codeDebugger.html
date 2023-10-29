@@ -1,0 +1,22 @@
+{% extends "codecompanionapp/header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Code Debugger--> 
+<div class="container py-5">
+	<h1>Code Debugger</h1>
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            {{codeDebugger_form.input_file|as_crispy_field}}
+        </div>
+        <div>
+            {{codeDebugger_form.input_code|as_crispy_field}}
+        </div>
+            <button type="submit"> Debug Code </button>
+    </form>
+</div>
+
+{% endblock %}

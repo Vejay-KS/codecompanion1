@@ -1,0 +1,31 @@
+{% extends "codecompanionapp/header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Letter Generator--> 
+<div class="container py-5">
+	<h1>Letter Generator</h1>
+	<form method="post">
+        {% csrf_token %}
+        <div>
+            {{letterGenerator_form.input_name|as_crispy_field}}
+        </div>
+        <div>
+            {{letterGenerator_form.input_type_of_letter|as_crispy_field}}
+        </div>
+        <div>
+            {{letterGenerator_form.input_extra_details|as_crispy_field}}
+        </div>
+        <div>
+            {{letterGenerator_form.input_organisation_details|as_crispy_field}}
+        </div>
+        <div>
+            {{letterGenerator_form.input_designation|as_crispy_field}}
+        </div>
+            <button type="submit"> Generate Letter </button>
+        </form>
+</div>
+
+{% endblock %}

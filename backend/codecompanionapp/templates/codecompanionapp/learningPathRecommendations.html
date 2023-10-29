@@ -1,0 +1,22 @@
+{% extends "codecompanionapp/header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Learning Path Recommendation--> 
+<div class="container py-5">
+	<h1>Learning Path Recommendation</h1>
+	<form method="post">
+        {% csrf_token %}
+        <div>
+            {{learningPathRecommendations_form.input_current_expertise|as_crispy_field}}
+        </div>
+        <div>
+            {{learningPathRecommendations_form.input_current_designation|as_crispy_field}}
+        </div>
+            <button type="submit"> Recommend Learning Path </button>
+        </form>
+</div>
+
+{% endblock %}

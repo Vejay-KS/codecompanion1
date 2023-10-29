@@ -1,0 +1,66 @@
+<!--Navbar-->
+<nav>
+      <ul>
+        {% if request.user.is_authenticated %}
+        <button>
+          <a href="/logout">Logout</a>
+        </button>
+        <button>
+          <a href="/home">Hello, {{user.username}}</a>
+        </button>
+        {% if request.user.is_authenticated and request.user.ROLE == "SOFTWAREDEVELOPER" %}
+        <button>
+          <a href="/codeOptimizer">Code Optimizer</a>
+        </button>
+        <button>
+          <a href="/codeDebugger">Code Debugger</a>
+        </button>
+        <button>
+          <a href="/codeReviewer">Code Reviewer</a>
+        </button>
+        <button>
+          <a href="/commentGenerator">Comment Generator</a>
+        </button>
+        {% elif request.user.is_authenticated and request.user.ROLE == "SOFTWAREDEVELOPMENTMANAGER" %}
+        <button>
+          <a href="/documentationHelper">Documentation Helper</a>
+        </button>
+        <button>
+          <a href="/learningPathRecommendations">LearningPathRecommendations</a>
+        </button>
+        <button>
+          <a href="/letterGenerator">Letter Generator</a>
+        </button>
+        {% elif request.user.is_authenticated and request.user.ROLE == "HUMANRESOURCEMANAGER" %}
+        <button>
+          <a href="/resumeFilterer">Resume Filterer</a>
+        </button>
+        <button>
+          <a href="/summarizeAppraisals">Summarize Appraisals</a>
+        </button>
+        <button>
+          <a href="/technicalTrends">Technical Generator</a>
+        </button>
+        <button>
+          <a href="/unitTestGenerator">Unit Test Generator</a>
+        </button>
+        
+        {% else %}
+  
+        <button>
+          <a href="/login">Undefined Role</a>
+        </button>
+  
+        {% endif %}
+
+        {% else %}
+  
+        <button>
+          <a href="/login">Login</a>
+        </button>
+
+      {% endif %}
+      </ul>
+    </div>
+  </nav>
+  

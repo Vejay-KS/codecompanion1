@@ -1,0 +1,28 @@
+{% extends "codecompanionapp/header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Resume Filterer--> 
+<div class="container py-5">
+	<h1>Resume Filterer</h1>
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            {{resumeFilterer_form.input_file1|as_crispy_field}}
+        </div>
+        <div>
+            {{resumeFilterer_form.input_file2|as_crispy_field}}
+        </div>
+        <div>
+            {{resumeFilterer_form.input_file3|as_crispy_field}}
+        </div>
+        <div>
+            {{resumeFilterer_form.input_job_role|as_crispy_field}}
+        </div>
+            <button type="submit"> Filter Resume </button>
+        </form>
+</div>
+
+{% endblock %}

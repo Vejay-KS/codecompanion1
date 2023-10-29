@@ -1,0 +1,19 @@
+{% extends "codecompanionapp/header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Code Reviewer--> 
+<div class="container py-5">
+	<h1>Code Reviewer</h1>
+	<form method="post">
+        {% csrf_token %}
+        <div>
+            {{codeReviewer_form.input_code|as_crispy_field}}
+        </div>
+            <button type="submit"> Review Code </button>
+        </form>
+</div>
+
+{% endblock %}
