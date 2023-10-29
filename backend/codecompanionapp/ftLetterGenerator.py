@@ -14,7 +14,7 @@ class LetterGeneratorForm(forms.Form, BaseLLM.BaseLLM1):
         message = "Generate a " + input_type_of_letter + " letter for " + input_name + " with " + input_extra_details + " as extra details " + " and organization's details as " + input_organisation_details + " and signed with designation as " + input_designation
         return message
     
-    def generate_chat_completion(self, input_name, input_type_of_letter, input_extra_details, input_organisation_details, input_designation, max_tokens=100):
+    def generate_chat_completion(self, input_name, input_type_of_letter, input_extra_details, input_organisation_details, input_designation, max_tokens=1000):
 
         headers = LetterGeneratorForm._get_headers(self)
         message = LetterGeneratorForm.create_message_LetterGenerator(self, input_name, input_type_of_letter, input_extra_details, input_organisation_details, input_designation)
