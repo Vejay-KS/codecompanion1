@@ -20,7 +20,7 @@ class BaseLLM1():
             "model": model,
             "messages": [{"role": "user", "content": messages}],
             "temperature": temperature,
-            "max_tokens": 100
+            "max_tokens": 1000
         }
         return data
 
