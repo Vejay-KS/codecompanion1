@@ -2,12 +2,10 @@ import requests
 import json
 import openai
 import os
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
 
 class BaseLLM1():
 
-    __API_KEY = ""
+    __API_KEY = os.getenv('OPENAI_API_KEY')
     __API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
     def _get_headers(self):
